@@ -147,8 +147,8 @@ function make_slides(f) {
       this.strange = $("#check-strange:checked").val() === undefined ? 0 : 1;
       if (this.radio) {
         this.log_responses();
-        exp.go(); //use exp.go() if and only if there is no "present"ed data, ie no list of stimuli.
-        // _stream.apply(this); //use _stream.apply(this) if there is a list of "present" stimuli to rotate through
+        // exp.go(); //use exp.go() if and only if there is no "present"ed data, ie no list of stimuli.
+        _stream.apply(this); //use _stream.apply(this) if there is a list of "present" stimuli to rotate through
       } else {
         $('.err').show();
       }
@@ -158,8 +158,8 @@ function make_slides(f) {
     log_responses: function() {
       exp.data_trials.push({
         "id": this.stim.TGrep,
-        // "sentence": this.stim.ButNotAllSentence,
-        // "slide_number_in_experiment": exp.phase, //exp.phase is a built-in trial number tracker
+        "sentence": this.stim.ButNotAllSentence,
+        "slide_number_in_experiment": exp.phase, //exp.phase is a built-in trial number tracker
         "response": this.radio,
         "strangeSentence": this.strange
       });
@@ -210,7 +210,7 @@ function init() {
   exp.catch_trials = [];
   var stimuli = all_stims;
 
-  exp.stimuli = stimuli; //call _.shuffle(stimuli) to randomize the order;
+  exp.stimuli = _.shuffle(stimuli) //to randomize the order;
   exp.n_trials = exp.stimuli.length;
 
   // exp.condition = _.sample(["context", "no-context"]); //can randomize between subjects conditions here
