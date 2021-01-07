@@ -95,19 +95,19 @@ function make_slides(f) {
   slides.trial = slide({
     name: "trial",
 
-    start: function() {
-      var stim = {
-        "TGrep": "37224:9",
-        "Context": "Speaker A:  and, and i, you know, i still provide most of the things that  go on around the house.<p>Speaker B: right.<p>Speaker A: so, uh, yeah and for a while i was going to school too, and tha-, it was tough.<p>Speaker B: yeah,  i uh, i think that while it 's a good change for i think women to be able  to fulfill their potential in whatever they feel, you know, their expertise may be .<p>Speaker A: uh-huh.<p>Speaker B: uh-huh.<p>Speaker A: uh, i think sometimes other things suffer and tha-, i think it 's hard to find a balance there.<p>Speaker B: ",
-        "EntireSentence": "but in some ways i think we are expected  to do it all.",
-        "ButNotAllSentence": "but in <strong>some, but not all</strong> ways i think we are expected  to do it all."
-      }    
+    // start: function() {
+      // var stim = {
+        // "TGrep": "37224:9",
+        // "Context": "Speaker A:  and, and i, you know, i still provide most of the things that  go on around the house.<p>Speaker B: right.<p>Speaker A: so, uh, yeah and for a while i was going to school too, and tha-, it was tough.<p>Speaker B: yeah,  i uh, i think that while it 's a good change for i think women to be able  to fulfill their potential in whatever they feel, you know, their expertise may be .<p>Speaker A: uh-huh.<p>Speaker B: uh-huh.<p>Speaker A: uh, i think sometimes other things suffer and tha-, i think it 's hard to find a balance there.<p>Speaker B: ",
+        // "EntireSentence": "but in some ways i think we are expected  to do it all.",
+        // "ButNotAllSentence": "but in <strong>some, but not all</strong> ways i think we are expected  to do it all."
+      // }    
     // The 7 lines above from "start:..." to the end of var stim = {...}" define a placeholder stimulus that you will have to delete when
     // loading in the individual stimulus data. 
 
     // To rotate through stimulus list, comment out the above 7 lines and  uncomment the following 2:
-    // present: exp.stimuli,
-    // present_handle : function(stim) {
+    present: exp.stimuli,
+    present_handle : function(stim) {
 
       // unselect all radio buttons at the beginning of each trial
       // (by default, the selection of the radio persists across trials)
